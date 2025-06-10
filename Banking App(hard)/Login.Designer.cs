@@ -254,9 +254,9 @@
             // 
             this.txtAccountType.FormattingEnabled = true;
             this.txtAccountType.Items.AddRange(new object[] {
-            "debit card",
-            "savings ",
-            "credit card"});
+            "debit ",
+            "saving",
+            "credit"});
             this.txtAccountType.Location = new System.Drawing.Point(422, 108);
             this.txtAccountType.Name = "txtAccountType";
             this.txtAccountType.Size = new System.Drawing.Size(173, 24);
