@@ -254,7 +254,7 @@ namespace Banking_App_hard_
                 }
                 else
                 {
-                    UpdateProgressBar(0); // fallback
+                    UpdateProgressBar(0); 
                 }
             }
 

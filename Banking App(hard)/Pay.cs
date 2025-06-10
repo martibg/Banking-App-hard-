@@ -172,6 +172,7 @@ namespace Banking_App_hard_
                         }
 
                         MessageBox.Show("Transfer successful.");
+                       
                     }
                     else
                     {
@@ -179,6 +180,7 @@ namespace Banking_App_hard_
                     }
 
                     transaction.Commit();
+                    mainForm2.RefreshAccountInfo();
                 }
                 catch (Exception ex)
                 {

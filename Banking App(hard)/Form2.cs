@@ -79,5 +79,28 @@ namespace Banking_App_hard_
             formGoalsAndChart.Show();
             this.Hide();
         }
+
+
+        public void RefreshAccountInfo()
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT AccountType, Balance, Currency FROM Accounts WHERE CustomerID = @CustomerID";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@CustomerID", UserSession.CustomerID);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            lblAccountType.Text = reader.GetString("AccountType");
+                            lblBalance.Text = reader.GetDecimal("Balance").ToString("C");
+                            lblCurrency.Text = reader.GetString("Currency");
+                        }
+                    }
+                }
+            }
+        }
     }
 }
